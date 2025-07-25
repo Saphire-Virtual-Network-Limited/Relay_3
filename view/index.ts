@@ -1,3 +1,6 @@
 import HomeView from "./homeView";
+import AccessView from "./AccessLayoutView";
 
-export { HomeView };
+export * from "./auth";
+
+export { HomeView, AccessView };

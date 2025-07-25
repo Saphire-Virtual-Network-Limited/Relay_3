@@ -6,13 +6,13 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import { Footer, Header } from "@/components/reususables";
 
-const appName = "TeensYouths";
+const appName = "Relay3.0";
 const appColor = "#ffffff";
 
 export const metadata: Metadata = {
 	title: `${appName} `,
-	description: "Designed to help you connect with the right person in a halal way.",
-	manifest: "/manifest",
+	description: "Relay",
+	// manifest: "/manifest",
 };
 
 export const viewport: Viewport = {

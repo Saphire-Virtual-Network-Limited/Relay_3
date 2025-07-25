@@ -1,3 +1,5 @@
+"use client";
+
 import { toast } from "sonner";
 
 type ToastType = "success" | "error" | "info" | "warning";
@@ -22,6 +24,9 @@ export const showToast = ({ type, message, duration = 2000, position = "top-cent
 		info: "#2196F3", // Info color (blue)
 		warning: "#FFC107", // Warning color (yellow-orange)
 	};
+
+	// Clear any existing toasts
+	toast.dismiss();
 
 	// Call the appropriate toast function based on the type with the duration and position
 	switch (type) {
