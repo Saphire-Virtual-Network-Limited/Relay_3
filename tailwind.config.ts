@@ -1,10 +1,9 @@
 import type { Config } from "tailwindcss";
 import { heroui } from "@heroui/react";
 import tailwindcssAnimate from "tailwindcss-animate";
-
 export default {
 	darkMode: ["class"],
-	content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./view/**/*.{ts,tsx}", "./utils/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
+	content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./view/**/*.{ts,tsx}", "./json/**/*.{ts,tsx}", "./utils/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}", "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		container: {
 			center: true,
@@ -18,11 +17,15 @@ export default {
 		},
 		extend: {
 			screens: {
-				xs: { max: "380px" },
+				xs: {
+					max: "380px",
+				},
 				sm: "600px",
 			},
 			animation: {
-				"blur-in": "blur-in 1s ease-out",
+				"blur-in": "blur-in 1.3s ease-out",
+				marquee: "marquee var(--duration) infinite linear",
+				"marquee-vertical": "marquee-vertical var(--duration) linear infinite",
 			},
 			keyframes: {
 				"blur-in": {
@@ -31,6 +34,22 @@ export default {
 					},
 					"100%": {
 						filter: "blur(0px)",
+					},
+				},
+				marquee: {
+					from: {
+						transform: "translateX(0)",
+					},
+					to: {
+						transform: "translateX(calc(-100% - var(--gap)))",
+					},
+				},
+				"marquee-vertical": {
+					from: {
+						transform: "translateY(0)",
+					},
+					to: {
+						transform: "translateY(calc(-100% - var(--gap)))",
 					},
 				},
 			},
@@ -74,6 +93,16 @@ export default {
 					"3": "hsl(var(--chart-3))",
 					"4": "hsl(var(--chart-4))",
 					"5": "hsl(var(--chart-5))",
+				},
+				sidebar: {
+					DEFAULT: "hsl(var(--sidebar-background))",
+					foreground: "hsl(var(--sidebar-foreground))",
+					primary: "hsl(var(--sidebar-primary))",
+					"primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+					accent: "hsl(var(--sidebar-accent))",
+					"accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+					border: "hsl(var(--sidebar-border))",
+					ring: "hsl(var(--sidebar-ring))",
 				},
 			},
 			borderRadius: {

@@ -984,6 +984,39 @@ export function AppSidebar() {
     },
   ];
 
+  const mbeItems: MenuItem[] = [
+    {
+      title: "Dashboard",
+      icon: Home,
+      url: "/access/mbe/",
+      id: "mbe-dashboard",
+    },
+    {
+      icon: Store,
+      title: "Stores",
+      url: "/access/mbe/stores",
+      id: "mbe-stores",
+    },
+    {
+      icon: CreditCard,
+      title: "Customers",
+      url: "/access/mbe/customers",
+      id: "mbe-customers",
+    },
+    {
+      icon: CreditCard,
+      title: "Loans",
+      url: "/access/mbe/loans",
+      id: "mbe-loans",
+    },
+    {
+      icon: Users,
+      title: "MobiflexAgents",
+      url: "/access/mbe/agents",
+      id: "mbe-agents",
+    },
+  ];
+
   // Get items based on user role
   const items: MenuItem[] = (() => {
     const role = userResponse?.data?.role;
@@ -1007,7 +1040,8 @@ export function AppSidebar() {
         return collectionAdminItems;
       case "COLLECTION_OFFICER":
         return collectionOfficerItems;
-
+      case "MBE":
+        return mbeItems;
       case "SCAN_PARTNER":
         return scanParterItems;
       default:
